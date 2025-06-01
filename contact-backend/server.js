@@ -48,24 +48,18 @@ async function saveContacts() {
 }
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.office365.com", // Outlook 的 SMTP 伺服器
-  port: 587, // Outlook 的 SMTP 連接埠 (TLS)
-  secure: false,
+  service: "Gmail", // e.g., 'Gmail', 'Outlook'
   auth: {
-    user: "joanna0414@hotmail.com",
-    pass: "87845618",
+    user: "tu9876543210000000001@gmail.com",
+    pass: "xpdz bhlj ewkl bktw",
   },
-  debug: true,
-  // tls: {
-  //    ciphers:'SSLv3'
-  // }
 });
 
 // sendEmailNotification()： 一個非同步函式，用於發送包含新聯絡人資訊的電子郵件。
 async function sendEmailNotification(contact) {
   const mailOptions = {
-    from: "joanna0414@hotmail.com",
-    to: "changming1102@gmail.com", // Recipient email address
+    from: "tu9876543210000000001@gmail.com",
+    to: "joanna0414@hotmail.com",
     subject: "New Contact Form Submission",
     text: `A new contact form has been submitted:\n\n${JSON.stringify(
       contact,
